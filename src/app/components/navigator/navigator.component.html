@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a (click)="collapsed = true" routerLink="/" class="navbar-brand"
+    >CTAE Gangsters</a
+  >
+  <button
+    class="navbar-toggler"
+    type="button"
+    aria-controls="navbarContent"
+    [attr.aria-expanded]="!collapsed"
+    aria-label="Toggle navigation"
+    (click)="collapsed = !collapsed"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div
+    class="collapse navbar-collapse"
+    [class.collapse]="collapsed"
+    id="navbarSupportedContent"
+  >
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <div *ngFor="let name of names">
+        <li class="nav-item">
+          <a
+            (click)="collapsed = !collapsed"
+            class="nav-link"
+            routerLink="/name/{{name}}"
+            >{{name}}</a
+          >
+        </li>
+      </div>
+    </ul>
+  </div>
+</nav>
